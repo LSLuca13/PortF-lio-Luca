@@ -6,10 +6,11 @@
   "description": "Portfólio pessoal de Luca Lima — desenvolvimento de software, formação no IFBA e robótica.",
   "scripts": {
     "dev": "vinext dev",
-    "build": "vinext build && node scripts/prepare-dist.mjs",
+    "build": "node scripts/build-platform.mjs",
+    "build:sites": "vinext build && node scripts/prepare-dist.mjs",
     "build:render": "node scripts/build-render-static.mjs",
     "start": "vinext start",
-    "check": "npm run build"
+    "check": "npm run build:sites && npm run build:render"
   },
   "dependencies": {
     "next": "16.2.12",
