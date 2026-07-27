@@ -1044,7 +1044,24 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
-  margin-top: clamp(4rem, 7vw, 7rem);
+  margin-top: 2rem;
+}
+
+.projects-privacy-note {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+  max-width: 680px;
+  margin: clamp(2rem, 4vw, 3.5rem) 0 0;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.projects-privacy-note svg {
+  flex: 0 0 auto;
 }
 
 .project-card {
@@ -1101,12 +1118,25 @@ img {
   text-align: center;
 }
 
-.project-top svg {
+.project-top > svg {
   transition: transform 220ms ease;
 }
 
-.project-card:hover .project-top svg {
+.project-card:hover .project-top > svg {
   transform: rotate(45deg);
+}
+
+.project-private-label {
+  display: inline-flex;
+  gap: 0.38rem;
+  align-items: center;
+  padding: 0.36rem 0.52rem;
+  border: 1px solid rgba(16, 18, 15, 0.24);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.52rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
 }
 
 .project-visual {
@@ -1492,6 +1522,97 @@ img {
   font-weight: 500;
 }
 
+.teaching-card {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 1.2fr 0.8fr;
+  border: 1px solid var(--line);
+  background: var(--blue);
+}
+
+.teaching-copy {
+  padding: clamp(2rem, 5vw, 5rem);
+}
+
+.teaching-copy .card-label {
+  color: rgba(16, 18, 15, 0.58);
+}
+
+.teaching-copy h3 {
+  margin: 1.2rem 0;
+  font-size: clamp(2.6rem, 6vw, 6.6rem);
+  font-weight: 500;
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+}
+
+.teaching-copy h3 span {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.teaching-copy > p {
+  max-width: 680px;
+  margin: 2rem 0 0;
+  color: rgba(16, 18, 15, 0.68);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.robotis-certificate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 390px;
+  padding: clamp(2rem, 4vw, 4rem);
+  border-left: 1px solid rgba(16, 18, 15, 0.2);
+  background:
+    linear-gradient(rgba(16, 18, 15, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 18, 15, 0.07) 1px, transparent 1px),
+    rgba(255, 255, 255, 0.16);
+  background-size: 34px 34px;
+}
+
+.certificate-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.robotis-certificate > strong {
+  max-width: 420px;
+  margin-top: 1rem;
+  font-size: clamp(2.2rem, 4vw, 4.5rem);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.robotis-certificate > p {
+  margin: 1.4rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.robotis-certificate > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.robotis-certificate > div span {
+  padding: 0.5rem 0.65rem;
+  border: 1px solid rgba(16, 18, 15, 0.28);
+  font-family: var(--font-mono);
+  font-size: 0.52rem;
+  text-transform: uppercase;
+}
+
 .contact {
   padding-top: var(--section-pad);
 }
@@ -1825,6 +1946,17 @@ img {
   .journey-grid {
     grid-template-columns: 1fr;
   }
+
+  .teaching-card {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .robotis-certificate {
+    min-height: 0;
+    border-top: 1px solid rgba(16, 18, 15, 0.2);
+    border-left: 0;
+  }
 }
 
 @media (max-width: 680px) {
@@ -1991,6 +2123,13 @@ img {
   .github-band-stats > div {
     min-width: 0;
     padding: 0 0.8rem;
+  }
+
+  .github-band-stats > div:nth-child(3) {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--line-light);
   }
 
   .github-band-stats > a {

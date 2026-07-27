@@ -50,6 +50,50 @@ const techStack = [
 const projects = [
   {
     index: "01",
+    name: "PodFuma",
+    category: "E-commerce / Operação",
+    description:
+      "Plataforma de vendas com catálogo, carrinho, checkout próprio, rastreio de pedidos e painel administrativo protegido.",
+    languages: ["JavaScript", "Node.js", "HTML/CSS"],
+    private: true,
+    accent: "lime",
+    monogram: "PF"
+  },
+  {
+    index: "02",
+    name: "Afro Tour",
+    category: "Web / Experiência ao vivo",
+    description:
+      "Experiência interativa para acompanhar uma rota em tempo real, com mapa, animações, participação do público e painel de gestão.",
+    languages: ["Next.js", "TypeScript", "PostgreSQL", "Leaflet"],
+    private: true,
+    accent: "blue",
+    monogram: "AT"
+  },
+  {
+    index: "03",
+    name: "JogueContato",
+    category: "Game / Tempo real",
+    description:
+      "Party game multiplayer para navegador, com salas por código, interface animada e comunicação em tempo real entre jogadores.",
+    languages: ["Next.js", "TypeScript", "Socket.IO", "Express"],
+    private: true,
+    accent: "orange",
+    monogram: "JC"
+  },
+  {
+    index: "04",
+    name: "Bahia Eco Nectar",
+    category: "Web / Produto & conversão",
+    description:
+      "Site de serviços ambientais focado em apresentação de soluções, experiência responsiva e conversão de contatos pelo WhatsApp.",
+    languages: ["React", "TypeScript", "Vite", "Tailwind"],
+    private: true,
+    accent: "violet",
+    monogram: "BN"
+  },
+  {
+    index: "05",
     name: "SmartFinances",
     category: "Android / Finanças",
     description:
@@ -60,7 +104,7 @@ const projects = [
     monogram: "SF"
   },
   {
-    index: "02",
+    index: "06",
     name: "TotemCariza3",
     category: "Web / Full-stack",
     description:
@@ -71,7 +115,7 @@ const projects = [
     monogram: "TC"
   },
   {
-    index: "03",
+    index: "07",
     name: "Boleto App",
     category: "Java / Padrões",
     description:
@@ -82,7 +126,7 @@ const projects = [
     monogram: "BA"
   },
   {
-    index: "04",
+    index: "08",
     name: "Estoque NFe",
     category: "Python / Automação",
     description:
@@ -126,6 +170,21 @@ function GitHubIcon({ size = 20 }) {
         d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.82a9.6 9.6 0 0 1 2.5.34c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.56 4.93.36.31.68.92.68 1.86V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
         clipRule="evenodd"
       />
+    </svg>
+  );
+}
+
+function LockIcon({ size = 13 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+    >
+      <rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" strokeWidth="1.8" />
     </svg>
   );
 }
@@ -372,7 +431,7 @@ export default function Portfolio() {
                 </div>
                 <div>
                   <small>Foco</small>
-                  <strong>Software + produto</strong>
+                  <strong>Software + robótica</strong>
                 </div>
               </div>
             </div>
@@ -435,8 +494,9 @@ export default function Portfolio() {
                   transitar entre desenvolvimento mobile, back-end, web e automação.
                 </p>
                 <p>
-                  A robótica trouxe outra camada: pensar sob pressão, testar hipóteses, colaborar e
-                  insistir até o sistema inteiro responder como deveria.
+                  Hoje, como professor de robótica no Colégio Cariza, em Porto Seguro, transformo
+                  desafios técnicos em experiências de aprendizagem, criatividade e colaboração,
+                  com Formação Pedagógica ROBOTIS certificada.
                 </p>
               </div>
             </div>
@@ -482,7 +542,7 @@ export default function Portfolio() {
               </h2>
             </div>
             <p className="section-side-note">
-              Stack baseada nas linguagens encontradas nos repositórios do meu GitHub.
+              Stack baseada nas linguagens encontradas nos meus repositórios públicos e privados.
             </p>
           </div>
 
@@ -522,44 +582,60 @@ export default function Portfolio() {
               target="_blank"
               rel="noreferrer"
             >
-              Ver todos no GitHub <ArrowUpRight />
+              Ver projetos públicos <ArrowUpRight />
             </a>
           </div>
 
+          <p className="projects-privacy-note" data-reveal>
+            <LockIcon size={15} />
+            Projetos privados exibem somente escopo e tecnologias — sem código ou dados internos.
+          </p>
+
           <div className="project-grid">
-            {projects.map((project) => (
-              <a
-                className={`project-card project-${project.accent}`}
-                href={project.url}
-                target="_blank"
-                rel="noreferrer"
-                key={project.name}
-                data-reveal
-              >
-                <div className="project-top">
-                  <span>{project.index}</span>
-                  <span>{project.category}</span>
-                  <ArrowUpRight size={22} />
-                </div>
-                <div className="project-visual" aria-hidden="true">
-                  <span className="project-monogram">{project.monogram}</span>
-                  <span className="project-ring project-ring-one" />
-                  <span className="project-ring project-ring-two" />
-                  <span className="project-pixel p1" />
-                  <span className="project-pixel p2" />
-                  <span className="project-pixel p3" />
-                </div>
-                <div className="project-content">
-                  <h3>{project.name}</h3>
-                  <p>{project.description}</p>
-                  <div className="project-tags">
-                    {project.languages.map((language) => (
-                      <span key={language}>{language}</span>
-                    ))}
+            {projects.map((project) => {
+              const ProjectElement = project.private ? "article" : "a";
+              const projectLinkProps = project.private
+                ? {}
+                : { href: project.url, target: "_blank", rel: "noreferrer" };
+
+              return (
+                <ProjectElement
+                  className={`project-card project-${project.accent} ${project.private ? "is-private" : ""}`}
+                  key={project.name}
+                  data-reveal
+                  {...projectLinkProps}
+                >
+                  <div className="project-top">
+                    <span>{project.index}</span>
+                    <span>{project.category}</span>
+                    {project.private ? (
+                      <span className="project-private-label">
+                        <LockIcon /> Privado
+                      </span>
+                    ) : (
+                      <ArrowUpRight size={22} />
+                    )}
                   </div>
-                </div>
-              </a>
-            ))}
+                  <div className="project-visual" aria-hidden="true">
+                    <span className="project-monogram">{project.monogram}</span>
+                    <span className="project-ring project-ring-one" />
+                    <span className="project-ring project-ring-two" />
+                    <span className="project-pixel p1" />
+                    <span className="project-pixel p2" />
+                    <span className="project-pixel p3" />
+                  </div>
+                  <div className="project-content">
+                    <h3>{project.name}</h3>
+                    <p>{project.description}</p>
+                    <div className="project-tags">
+                      {project.languages.map((language) => (
+                        <span key={language}>{language}</span>
+                      ))}
+                    </div>
+                  </div>
+                </ProjectElement>
+              );
+            })}
           </div>
 
           <div className="github-band" data-reveal>
@@ -578,6 +654,10 @@ export default function Portfolio() {
               <div>
                 <strong data-public-repos>{publicRepos}</strong>
                 <span>projetos públicos</span>
+              </div>
+              <div>
+                <strong>04</strong>
+                <span>projetos privados</span>
               </div>
               <a
                 href="https://github.com/LSLuca13"
@@ -641,6 +721,29 @@ export default function Portfolio() {
                 <div>
                   <span>1×</span>
                   <p><strong>Campeão nacional</strong> em robótica</p>
+                </div>
+              </div>
+            </article>
+
+            <article className="teaching-card" data-reveal>
+              <div className="teaching-copy">
+                <span className="card-label">Atuação atual · Porto Seguro, BA</span>
+                <h3>
+                  Professor de Robótica
+                  <span>Colégio Cariza</span>
+                </h3>
+                <p>
+                  Ensino robótica com uma abordagem prática e interdisciplinar, conectando
+                  programação, criatividade, resolução de problemas e trabalho em equipe.
+                </p>
+              </div>
+              <div className="robotis-certificate">
+                <span className="certificate-kicker">Certificação profissional</span>
+                <strong>Formação Pedagógica ROBOTIS</strong>
+                <p>ROBOTIS Educacional · Educacional · 16 horas</p>
+                <div>
+                  <span>Realizada em 29.04.2025</span>
+                  <span>Certificado verificado</span>
                 </div>
               </div>
             </article>
