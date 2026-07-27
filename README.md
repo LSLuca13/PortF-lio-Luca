@@ -31,6 +31,21 @@ npm.cmd start
 
 O build gera em `dist/` um bundle vinext compatível com a infraestrutura de hospedagem.
 
+## Publicar como Static Site no Render
+
+O projeto mantém um build estático separado para o Render:
+
+```powershell
+npm.cmd run build:render
+```
+
+No painel do Render, use:
+
+- **Build Command:** `npm ci && npm run build:render`
+- **Publish Directory:** `out`
+
+O arquivo `render.yaml` também contém essa configuração para uso como Blueprint.
+
 ## Personalização rápida
 
 Os textos, projetos e tecnologias ficam em `app/portfolio.js`. Cores, tipografia, responsividade e
