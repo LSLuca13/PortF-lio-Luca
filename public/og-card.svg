@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#10120f"/>
+  <path d="M0 96h1200M0 534h1200M96 0v630M1104 0v630" stroke="#2f322d"/>
+  <circle cx="920" cy="315" r="198" fill="none" stroke="#d9ff63" stroke-width="2"/>
+  <circle cx="920" cy="315" r="136" fill="#181b16" stroke="#40453b"/>
+  <text x="96" y="120" fill="#d9ff63" font-family="monospace" font-size="22">PORTFÓLIO / 2026</text>
+  <text x="96" y="310" fill="#f4f2e8" font-family="Arial, sans-serif" font-size="112" font-weight="700">LUCA</text>
+  <text x="96" y="416" fill="#f4f2e8" font-family="Arial, sans-serif" font-size="112" font-weight="700">LIMA.</text>
+  <text x="99" y="486" fill="#9ca095" font-family="monospace" font-size="21">DESENVOLVIMENTO DE SOFTWARE · ROBÓTICA</text>
+  <text x="847" y="337" fill="#d9ff63" font-family="monospace" font-size="72" font-weight="700">&lt;/&gt;</text>
+</svg>

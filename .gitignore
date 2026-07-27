@@ -1,0 +1,10 @@
+.env
+data/*.json
+node_modules/
+.next/
+.vinext/
+out/
+dist/
+next-env.d.ts
+.DS_Store
+*.log
