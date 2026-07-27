@@ -354,8 +354,8 @@ export default function Portfolio() {
                 <span className="orbit-code orbit-code-c">PYTHON</span>
                 <div className="portrait-frame">
                   <img
-                    src="/luca-github-avatar.png"
-                    alt="Avatar do GitHub de Luca Lima"
+                    src="/luca-github-profile.png"
+                    alt="Foto de perfil de Luca Lima"
                   />
                   <span className="portrait-scan" aria-hidden="true" />
                 </div>
